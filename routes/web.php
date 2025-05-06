@@ -21,6 +21,7 @@ use App\Http\Controllers\Backend\RecentworksController;
 use App\Http\Controllers\Backend\Resumcontroller;
 use App\Http\Controllers\Backend\ServicesController;
 use App\Http\Controllers\Backend\SittingController;
+use App\Http\Controllers\Backend\Skillcontroller;
 use App\Http\Controllers\Backend\Successstory;
 use App\Http\Controllers\Backend\TeamController;
 use App\Http\Controllers\Backend\WhyspecilaController;
@@ -221,6 +222,10 @@ Route::prefix('Profile')->group(function () {
     Route::post('/profile/changes', [ProfileController::class, 'Profilechanes'])->name('profile.namechanes');
 
 });
+
+Route::get('portfolio', [FrontentController::class, 'portfolio'])->name('portfolio');
+Route::get('blogdetails', [FrontentController::class, 'blogdetails'])->name('blogdetails');
 Route::resource('aboutme', Aboutmecontroller::class);
 Route::resource('resum', Resumcontroller::class);
+Route::resource('skill', Skillcontroller::class);
 

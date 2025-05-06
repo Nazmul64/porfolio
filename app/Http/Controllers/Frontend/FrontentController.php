@@ -18,6 +18,7 @@ use App\Models\Recentworks;
 use App\Models\Resum;
 use App\Models\Service;
 use App\Models\Sitting;
+use App\Models\Skill;
 use App\Models\Success;
 use App\Models\Testmonaill;
 use App\Models\Videogallery;
@@ -41,6 +42,8 @@ class FrontentController extends Controller
         $Client=Client::all();
         $aboutme=Aboutme::all();
         $Resum=Resum::all();
+        $skill=Skill::all();
+        $Contact=Contact::all();
         return view('Frontent.index'
         ,compact('banner'
         ,'setting'
@@ -56,6 +59,8 @@ class FrontentController extends Controller
         ,'Client',
         'aboutme',
         'Resum',
+        'skill',
+        'Contact',
 ));
     }
     public function contact()
@@ -77,10 +82,23 @@ class FrontentController extends Controller
     }
     public function videogallerydetails()
     {
-        // Retrieve all records from the database
-        $data_show = Videogallery::first(); // You can also use 'get()' if you need to use a query builder, but 'all()' works for fetching all records.
+        $data_show = Videogallery::first(); 
 
         return view('Frontent.videogallery', compact('data_show'));
     }
+    public function portfolio()
+    {
+        $portfolio = Recentworks::first(); 
+        return view('Frontent.body.portfoliodetails', compact('portfolio'));
+    }
+
+    public function blogdetails()
+    {
+        $blogdetails = Omsblog::first(); 
+        return view('Frontent.body.blogdetails', compact('blogdetails'));
+    }
+
+
+    
 
 }

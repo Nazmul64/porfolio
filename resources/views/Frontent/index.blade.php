@@ -2,10 +2,7 @@
 @section('content')
 <section id="home-section" class="hero">
     <div class="home-slider  owl-carousel">
-
-        @foreach ( $banner as  $item)
-        
-
+    @foreach ( $banner as  $item)
     <div class="slider-item ">
         <div class="overlay"></div>
       <div class="container">
@@ -127,88 +124,44 @@
     </div>
   </div>
 </section>
+  @php
+      use App\Models\Skill;
+      $Skils = Skill::first();
+  @endphp
+<section class="ftco-section" id="skills-section">
+    <div class="container">
+        <div class="row justify-content-center pb-5">
+            <div class="col-md-12 heading-section text-center ftco-animate">
+                <h1 class="big big-2">Skills</h1>
+                <h2 class="mb-4">{{ $Skils->skills_title ?? '' }}</h2>
+                <p>{{ $Skils->skills_description ?? '' }}</p>
+            </div>
+        </div>
 
-
-
-  <section class="ftco-section" id="skills-section">
-      <div class="container">
-          <div class="row justify-content-center pb-5">
-    <div class="col-md-12 heading-section text-center ftco-animate">
-        <h1 class="big big-2">Skills</h1>
-      <h2 class="mb-4">My Skills</h2>
-      <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
+        <div class="row">
+            @foreach($skill as $item)
+                <div class="col-md-6 animate-box mb-4">
+                    <div class="progress-wrap ftco-animate">
+                        <div class="d-flex justify-content-between align-items-center mb-1">
+                            <h3 class="skill-title mb-0">{{ $item->skills_name ?? 'Unnamed Skill' }}</h3>
+                            <span class="skill-percent text-white font-weight-bold">{{ $item->skills_count ?? 0 }}%</span>
+                        </div>
+                        <div class="progress">
+                            <div 
+                                class="progress-bar color-6" 
+                                role="progressbar" 
+                                aria-valuenow="{{ $item->skills_count ?? 0 }}" 
+                                aria-valuemin="0" 
+                                aria-valuemax="100"
+                                data-width="{{ $item->skills_count ?? 0 }}%">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+        </div>
     </div>
-  </div>
-          <div class="row">
-              <div class="col-md-6 animate-box">
-                  <div class="progress-wrap ftco-animate">
-                      <h3>Photoshop</h3>
-                      <div class="progress">
-                           <div class="progress-bar color-1" role="progressbar" aria-valuenow="90"
-                            aria-valuemin="0" aria-valuemax="100" style="width:90%">
-                          <span>90%</span>
-                            </div>
-                      </div>
-                  </div>
-              </div>
-              <div class="col-md-6 animate-box">
-                  <div class="progress-wrap ftco-animate">
-                      <h3>jQuery</h3>
-                      <div class="progress">
-                           <div class="progress-bar color-2" role="progressbar" aria-valuenow="85"
-                            aria-valuemin="0" aria-valuemax="100" style="width:85%">
-                          <span>85%</span>
-                            </div>
-                      </div>
-                  </div>
-              </div>
-              <div class="col-md-6 animate-box">
-                  <div class="progress-wrap ftco-animate">
-                      <h3>HTML5</h3>
-                      <div class="progress">
-                           <div class="progress-bar color-3" role="progressbar" aria-valuenow="95"
-                            aria-valuemin="0" aria-valuemax="100" style="width:95%">
-                          <span>95%</span>
-                            </div>
-                      </div>
-                  </div>
-              </div>
-              <div class="col-md-6 animate-box">
-                  <div class="progress-wrap ftco-animate">
-                      <h3>CSS3</h3>
-                      <div class="progress">
-                           <div class="progress-bar color-4" role="progressbar" aria-valuenow="90"
-                            aria-valuemin="0" aria-valuemax="100" style="width:90%">
-                          <span>90%</span>
-                            </div>
-                      </div>
-                  </div>
-              </div>
-              <div class="col-md-6 animate-box">
-                  <div class="progress-wrap ftco-animate">
-                      <h3>WordPress</h3>
-                      <div class="progress">
-                           <div class="progress-bar color-5" role="progressbar" aria-valuenow="70"
-                            aria-valuemin="0" aria-valuemax="100" style="width:70%">
-                          <span>70%</span>
-                            </div>
-                      </div>
-                  </div>
-              </div>
-              <div class="col-md-6 animate-box">
-                  <div class="progress-wrap ftco-animate">
-                      <h3>SEO</h3>
-                      <div class="progress">
-                           <div class="progress-bar color-6" role="progressbar" aria-valuenow="80"
-                            aria-valuemin="0" aria-valuemax="100" style="width:80%">
-                          <span>80%</span>
-                            </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </section>
+</section>
 
 
 <section class="ftco-section ftco-project" id="projects-section">
@@ -221,64 +174,17 @@
     </div>
   </div>
       <div class="row">
-          <div class="col-md-4">
-              <div class="project img ftco-animate d-flex justify-content-center align-items-center" style="background-image: url(images/project-4.jpg);">
+          @foreach($recentworks as $item) 
+          <div class="col-md-6">
+              <div class="project img ftco-animate d-flex justify-content-center align-items-center" style="background-image: url({{ asset('uploads/recentworks') }}/{{ $item->photo ?? '' }});">
                   <div class="overlay"></div>
                   <div class="text text-center p-4">
-                      <h3><a href="#">Branding &amp; Illustration Design</a></h3>
-                      <span>Web Design</span>
-                  </div>
-              </div>
-            </div>
-            <div class="col-md-8">
-              <div class="project img ftco-animate d-flex justify-content-center align-items-center" style="background-image: url(images/project-5.jpg);">
-                  <div class="overlay"></div>
-                  <div class="text text-center p-4">
-                      <h3><a href="#">Branding &amp; Illustration Design</a></h3>
-                      <span>Web Design</span>
-                  </div>
-              </div>
-            </div>
-
-          <div class="col-md-8">
-              <div class="project img ftco-animate d-flex justify-content-center align-items-center" style="background-image: url(images/project-1.jpg);">
-                  <div class="overlay"></div>
-                  <div class="text text-center p-4">
-                      <h3><a href="#">Branding &amp; Illustration Design</a></h3>
-                      <span>Web Design</span>
-                  </div>
-              </div>
-
-              <div class="project img ftco-animate d-flex justify-content-center align-items-center" style="background-image: url(images/project-6.jpg);">
-                  <div class="overlay"></div>
-                  <div class="text text-center p-4">
-                      <h3><a href="#">Branding &amp; Illustration Design</a></h3>
-                      <span>Web Design</span>
+                      <h3><a href="{{ route('portfolio') }}">{{ $item->projecttitle ?? '' }}</a></h3>
+                      <a href="{{ route('portfolio') }}"><span>{{ $item->projectdescription ?? '' }}</span></a>
                   </div>
               </div>
           </div>
-          <div class="col-md-4">
-              <div class="row">
-                  <div class="col-md-12">
-                      <div class="project img ftco-animate d-flex justify-content-center align-items-center" style="background-image: url(images/project-2.jpg);">
-                          <div class="overlay"></div>
-                          <div class="text text-center p-4">
-                              <h3><a href="#">Branding &amp; Illustration Design</a></h3>
-                              <span>Web Design</span>
-                          </div>
-                      </div>
-                  </div>
-                  <div class="col-md-12">
-                      <div class="project img ftco-animate d-flex justify-content-center align-items-center" style="background-image: url(images/project-3.jpg);">
-                          <div class="overlay"></div>
-                          <div class="text text-center p-4">
-                              <h3><a href="#">Branding &amp; Illustration Design</a></h3>
-                              <span>Web Design</span>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
+          @endforeach
       </div>
   </div>
 </section>
@@ -294,98 +200,69 @@
     </div>
   </div>
   <div class="row d-flex">
-    <div class="col-md-4 d-flex ftco-animate">
-        <div class="blog-entry justify-content-end">
-        <a href="single.html" class="block-20" style="background-image: url('images/image_1.jpg');">
-        </a>
-        <div class="text mt-3 float-right d-block">
-            <div class="d-flex align-items-center mb-3 meta">
-              <p class="mb-0">
-                  <span class="mr-2">June 21, 2019</span>
-                  <a href="#" class="mr-2">Admin</a>
-                  <a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a>
-              </p>
-          </div>
-          <h3 class="heading"><a href="single.html">Why Lead Generation is Key for Business Growth</a></h3>
-          <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4 d-flex ftco-animate">
-        <div class="blog-entry justify-content-end">
-        <a href="single.html" class="block-20" style="background-image: url('images/image_2.jpg');">
-        </a>
-        <div class="text mt-3 float-right d-block">
-            <div class="d-flex align-items-center mb-3 meta">
-              <p class="mb-0">
-                  <span class="mr-2">June 21, 2019</span>
-                  <a href="#" class="mr-2">Admin</a>
-                  <a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a>
-              </p>
-          </div>
-          <h3 class="heading"><a href="single.html">Why Lead Generation is Key for Business Growth</a></h3>
-          <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-        </div>
-      </div>
-    </div>
+     @foreach($Omsblog as $item) 
     <div class="col-md-4 d-flex ftco-animate">
         <div class="blog-entry">
-        <a href="single.html" class="block-20" style="background-image: url('images/image_3.jpg');">
-        </a>
+       <a href="{{ route('blogdetails') }}" class="block-20" style="background-image: url('{{ asset('uploads/blog/' . ($item->main_photo ?? '')) }}');">
+       </a>
+
         <div class="text mt-3 float-right d-block">
             <div class="d-flex align-items-center mb-3 meta">
               <p class="mb-0">
-                  <span class="mr-2">June 21, 2019</span>
-                  <a href="#" class="mr-2">Admin</a>
-                  <a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a>
+                <span class="mr-2">{{ \Carbon\Carbon::parse($item->created_at)->format('F d, Y') }}</span>
+                  <a href="{{ route('blogdetails') }}" class="mr-2">{{ $item->admin ?? '' }}</a>
               </p>
           </div>
-          <h3 class="heading"><a href="single.html">Why Lead Generation is Key for Business Growth</a></h3>
-          <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+          <h3 class="heading"><a href="{{ route('blogdetails') }}">{{ $item->title ?? '' }}</a></h3>
+        <a href="{{ route('blogdetails') }}"style="color:white;">{{ \Illuminate\Support\Str::words($item->description ?? '',15, '...') }}</a>
+
         </div>
       </div>
     </div>
+      @endforeach
   </div>
 </div>
 </section>
 
 <section class="ftco-section ftco-no-pt ftco-no-pb ftco-counter img" id="section-counter">
+     @foreach($success as $item)
   <div class="container">
           <div class="row d-md-flex align-items-center">
     <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
       <div class="block-18">
         <div class="text">
-          <strong class="number" data-number="100">0</strong>
-          <span>Awards</span>
+          <strong class="number" data-number="100">{{ $item->count1 ?? '' }}</strong>
+          <span>{{ $item->counttitle1 ?? '' }}</span>
         </div>
       </div>
     </div>
     <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
       <div class="block-18">
         <div class="text">
-          <strong class="number" data-number="1200">0</strong>
-          <span>Complete Projects</span>
+          <strong class="number" data-number="1200">{{ $item->count2 ?? '' }}</strong>
+          <span>{{ $item->counttitle2 ?? '' }}</span>
         </div>
       </div>
     </div>
     <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
       <div class="block-18">
         <div class="text">
-          <strong class="number" data-number="1200">0</strong>
-          <span>Happy Customers</span>
+          <strong class="number" data-number="1200">{{ $item->count3 ?? '' }}</strong>
+          <span>{{ $item->counttitle3 ?? '' }}</span>
         </div>
       </div>
     </div>
     <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
       <div class="block-18">
         <div class="text">
-          <strong class="number" data-number="500">0</strong>
-          <span>Cups of coffee</span>
+          <strong class="number" data-number="500">{{ $item->count4 ?? '' }}</strong>
+          <span>{{ $item->counttitle4 ?? '' }}</span>
         </div>
       </div>
     </div>
   </div>
 </div>
+  @endforeach
 </section>
 
 <section class="ftco-section ftco-hireme img margin-top" style="background-image: url(images/bg_1.jpg)">
@@ -399,7 +276,10 @@
           </div>
       </div>
   </section>
-
+  @php
+      use App\Models\Contact;
+      $Contact = Contact::first();
+  @endphp
 <section class="ftco-section contact-section ftco-no-pb" id="contact-section">
 <div class="container">
     <div class="row justify-content-center mb-5 pb-3">
@@ -417,7 +297,7 @@
                 <span class="icon-map-signs"></span>
             </div>
             <h3 class="mb-4">Address</h3>
-          <p>198 West 21th Street, Suite 721 New York NY 10016</p>
+          <p>{{  $Contact->address ?? '' }}</p>
         </div>
     </div>
     <div class="col-md-6 col-lg-3 d-flex ftco-animate">
@@ -426,7 +306,7 @@
                 <span class="icon-phone2"></span>
             </div>
             <h3 class="mb-4">Contact Number</h3>
-          <p><a href="tel://1234567920">+ 1235 2355 98</a></p>
+          <p><a href="#">{{  $Contact->number_1 ?? '' }}</a></p>
         </div>
     </div>
     <div class="col-md-6 col-lg-3 d-flex ftco-animate">
@@ -435,18 +315,10 @@
                 <span class="icon-paper-plane"></span>
             </div>
             <h3 class="mb-4">Email Address</h3>
-          <p><a href="mailto:info@yoursite.com">info@yoursite.com</a></p>
+          <p><a href="mailto:info@yoursite.com">{{  $Contact->email_1 ?? '' }}</a></p>
         </div>
     </div>
-    <div class="col-md-6 col-lg-3 d-flex ftco-animate">
-        <div class="align-self-stretch box p-4 text-center">
-            <div class="icon d-flex align-items-center justify-content-center">
-                <span class="icon-globe"></span>
-            </div>
-            <h3 class="mb-4">Website</h3>
-          <p><a href="#">yoursite.com</a></p>
-        </div>
-    </div>
+    
   </div>
 
   <div class="row no-gutters block-9">
@@ -472,7 +344,7 @@
     </div>
 
     <div class="col-md-6 d-flex">
-        <div class="img" style="background-image: url(images/about.jpg);"></div>
+        <div class="img" style="background-image: url({{ asset('uploads/contact') }}/{{ $Contact->photo ?? '' }});"></div>
     </div>
   </div>
 </div>

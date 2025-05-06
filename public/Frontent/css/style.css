@@ -4,6 +4,32 @@
  * Copyright 2011-2019 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
+ /*skill style start*/
+
+ .skill-title {
+  font-size: 16px;
+  color: #fff;
+}
+.skill-percent {
+  font-size: 14px;
+}
+.progress {
+  height: 10px;
+  background: #2f2f2f;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.progress-bar {
+  background-color: #fbb034;
+  border-radius: 5px;
+  width: 0%; /* Start at 0 for animation */
+  transition: width 1.5s ease-in-out;
+}
+.progress-wrap {
+  margin-bottom: 20px;
+}
+
+ /*end skill color */
 :root {
   --blue: #007bff;
   --indigo: #6610f2;

@@ -275,3 +275,13 @@
 
 })(jQuery);
 
+document.addEventListener('DOMContentLoaded', function () {
+	const bars = document.querySelectorAll('.progress-bar');
+	bars.forEach(bar => {
+		const targetWidth = bar.getAttribute('data-width');
+		setTimeout(() => {
+			bar.style.width = targetWidth;
+		}, 300); // Delay slightly for effect
+	});
+});
+
