@@ -1,0 +1,4 @@
+[02-Apr-2025 11:35:09 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Support\Facades\Auth" not found in /home/omsitbd1/public_html/routes/web.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/omsitbd1/public_html/routes/web.php on line 32

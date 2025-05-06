@@ -1,0 +1,52 @@
+[24-Feb-2025 18:51:23 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Seeder" not found in /home/omsitbd1/public_html/database/seeders/Adminseeder.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/omsitbd1/public_html/database/seeders/Adminseeder.php on line 10
+[27-Feb-2025 11:41:10 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Seeder" not found in /home/omsitbd1/public_html/database/seeders/Adminseeder.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/omsitbd1/public_html/database/seeders/Adminseeder.php on line 10
+[01-Mar-2025 19:11:59 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Seeder" not found in /home/omsitbd1/public_html/database/seeders/Adminseeder.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/omsitbd1/public_html/database/seeders/Adminseeder.php on line 10
+[04-Mar-2025 05:26:10 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Seeder" not found in /home/omsitbd1/public_html/database/seeders/Adminseeder.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/omsitbd1/public_html/database/seeders/Adminseeder.php on line 10
+[06-Mar-2025 14:26:06 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Seeder" not found in /home/omsitbd1/public_html/database/seeders/Adminseeder.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/omsitbd1/public_html/database/seeders/Adminseeder.php on line 10
+[08-Mar-2025 17:07:24 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Seeder" not found in /home/omsitbd1/public_html/database/seeders/Adminseeder.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/omsitbd1/public_html/database/seeders/Adminseeder.php on line 10
+[11-Mar-2025 05:07:15 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Seeder" not found in /home/omsitbd1/public_html/database/seeders/Adminseeder.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/omsitbd1/public_html/database/seeders/Adminseeder.php on line 10
+[13-Mar-2025 13:10:49 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Seeder" not found in /home/omsitbd1/public_html/database/seeders/Adminseeder.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/omsitbd1/public_html/database/seeders/Adminseeder.php on line 10
+[13-Mar-2025 21:05:55 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Seeder" not found in /home/omsitbd1/public_html/database/seeders/Adminseeder.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/omsitbd1/public_html/database/seeders/Adminseeder.php on line 10
+[16-Mar-2025 07:01:06 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Seeder" not found in /home/omsitbd1/public_html/database/seeders/Adminseeder.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/omsitbd1/public_html/database/seeders/Adminseeder.php on line 10
+[20-Mar-2025 19:13:25 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Seeder" not found in /home/omsitbd1/public_html/database/seeders/Adminseeder.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/omsitbd1/public_html/database/seeders/Adminseeder.php on line 10
+[28-Mar-2025 17:56:59 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Seeder" not found in /home/omsitbd1/public_html/database/seeders/Adminseeder.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/omsitbd1/public_html/database/seeders/Adminseeder.php on line 10
+[31-Mar-2025 21:29:24 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Seeder" not found in /home/omsitbd1/public_html/database/seeders/Adminseeder.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/omsitbd1/public_html/database/seeders/Adminseeder.php on line 10
