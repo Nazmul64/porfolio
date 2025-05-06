@@ -144,7 +144,19 @@
                <li> <a href="{{ route('contact.index') }}"><span class="material-symbols-outlined">arrow_right</span> List Contact</a> </li>
             </ul>
           </li>
-        
+
+          <li>
+            <a href="javascript:;" class="has-arrow">
+              <div class="parent-icon"><span class="material-symbols-outlined">apps</span>
+
+              </div>
+              <div class="menu-title">Seometa Add </div>
+            </a>
+            <ul>
+               <li> <a href="{{ route('seometa.index') }}"><span class="material-symbols-outlined">arrow_right</span> List Seometa</a> </li>
+            </ul>
+          </li>
+          
          
         
           <li>

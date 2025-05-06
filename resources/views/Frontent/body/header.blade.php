@@ -1,10 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Clark - Free Bootstrap 4 Template by Colorlib</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	@php
+		use App\Models\Seometa;
+		$seometa = Seometa::first();
+	@endphp
 
+	<title>{{ $seometa->meta_title ?? $websetting->webtitle_text ?? 'Default Title' }}</title>
+	<meta name="description" content="{{ $seometa->meta_description ?? 'Default description' }}">
+	<meta name="keywords" content="{{ $seometa->meta_keywords ?? 'default, keywords' }}">
+	<meta name="focuskeywords" content="{{ $seometa->meta_focus_keywords ?? 'default focus' }}">
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
 
     <link rel="stylesheet" href="{{ asset('Frontent/css/open-iconic-bootstrap.min.css') }}">
@@ -28,7 +35,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
 	    <div class="container">
-	      <a class="navbar-brand" href="index.html">Clark</a>
+	      <a class="navbar-brand" href="index.html">mahadidigital</a>
 	      <button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 	        <span class="oi oi-menu"></span> Menu
 	      </button>
