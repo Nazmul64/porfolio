@@ -18,6 +18,7 @@ use App\Http\Controllers\Backend\HostingController;
 use App\Http\Controllers\Backend\OurtechnologyController;
 use App\Http\Controllers\Backend\ProfileController;
 use App\Http\Controllers\Backend\RecentworksController;
+use App\Http\Controllers\Backend\Resumcontroller;
 use App\Http\Controllers\Backend\ServicesController;
 use App\Http\Controllers\Backend\SittingController;
 use App\Http\Controllers\Backend\Successstory;
@@ -221,4 +222,5 @@ Route::prefix('Profile')->group(function () {
 
 });
 Route::resource('aboutme', Aboutmecontroller::class);
+Route::resource('resum', Resumcontroller::class);
 

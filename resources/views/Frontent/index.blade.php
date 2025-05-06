@@ -73,6 +73,7 @@
 <section class="ftco-section ftco-no-pb" id="resume-section">
   <div class="container">
       <div class="row justify-content-center pb-5">
+        
     <div class="col-md-10 heading-section text-center ftco-animate">
         <h1 class="big big-2">Resume</h1>
       <h2 class="mb-4">Resume</h2>
@@ -80,130 +81,53 @@
     </div>
   </div>
       <div class="row">
+     @foreach($Resum as  $item)
           <div class="col-md-6">
               <div class="resume-wrap ftco-animate">
-                  <span class="date">2014-2015</span>
-                  <h2>Master Degree of Design</h2>
-                  <span class="position">Cambridge University</span>
-                  <p class="mt-4">A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-              </div>
-              <div class="resume-wrap ftco-animate">
-                  <span class="date">2014-2015</span>
-                  <h2>Bachelor's Degree of C.A</h2>
-                  <span class="position">Cambridge University</span>
-                  <p class="mt-4">A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-              </div>
-              <div class="resume-wrap ftco-animate">
-                  <span class="date">2014-2015</span>
-                  <h2>Diploma in Computer</h2>
-                  <span class="position">Cambridge University</span>
-                  <p class="mt-4">A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
+                  <span class="date">{{$item->date_of_brith ?? ''  }}</span>
+                  <h2>{{$item->resum_title ?? ''  }}</h2>
+                  <p class="mt-4">{{$item->resum_description ?? ''  }}</p>
               </div>
           </div>
-
-          <div class="col-md-6">
-              <div class="resume-wrap ftco-animate">
-                  <span class="date">2014-2015</span>
-                  <h2>Art &amp; Creative Director</h2>
-                  <span class="position">Cambridge University</span>
-                  <p class="mt-4">A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-              </div>
-              <div class="resume-wrap ftco-animate">
-                  <span class="date">2014-2015</span>
-                  <h2>Wordpress Developer</h2>
-                  <span class="position">Cambridge University</span>
-                  <p class="mt-4">A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-              </div>
-              <div class="resume-wrap ftco-animate">
-                  <span class="date">2017-2018</span>
-                  <h2>UI/UX Designer</h2>
-                  <span class="position">Cambridge University</span>
-                  <p class="mt-4">A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-              </div>
-          </div>
-      </div>
-      <div class="row justify-content-center mt-5">
-          <div class="col-md-6 text-center ftco-animate">
-              <p><a href="#" class="btn btn-primary py-4 px-5">Download CV</a></p>
-          </div>
+          @endforeach
       </div>
   </div>
 </section>
 
 <section class="ftco-section" id="services-section">
+  @php
+      use App\Models\Service;
+      $servicess = Service::first();
+  @endphp
+
   <div class="container">
-      <div class="row justify-content-center py-5 mt-5">
-    <div class="col-md-12 heading-section text-center ftco-animate">
+    <!-- Section Heading -->
+    <div class="row justify-content-center py-5 mt-5">
+      <div class="col-md-12 heading-section text-center ftco-animate">
         <h1 class="big big-2">Services</h1>
-      <h2 class="mb-4">Services</h2>
-      <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
+        <h2 class="mb-4">{{ $servicess->title ?? 'Our Services' }}</h2>
+        <p>{{ $servicess->subtitle ?? 'We offer a wide range of digital solutions.' }}</p>
+      </div>
+    </div>
+
+    <!-- Service Items -->
+    <div class="row">
+      @foreach($services as $item)
+        <div class="col-md-4 text-center d-flex ftco-animate">
+          <div class="services-1">
+            <span class="icon mb-4">
+              <img src="{{ asset('uploads/services/' . ($item->photo ?? 'default.png')) }}" class="img-fluid" alt="{{ $item->maintitle ?? 'Service Image' }}">
+            </span>
+            <div class="desc">
+              <p>{{ $item->maindescription ?? 'Service description not available.' }}</p>
+            </div>
+          </div>
+        </div>
+      @endforeach
     </div>
   </div>
-      <div class="row">
-              <div class="col-md-4 text-center d-flex ftco-animate">
-                  <a href="#" class="services-1">
-                      <span class="icon">
-                          <i class="flaticon-analysis"></i>
-                      </span>
-                      <div class="desc">
-                          <h3 class="mb-5">Web Design</h3>
-                      </div>
-                  </a>
-              </div>
-              <div class="col-md-4 text-center d-flex ftco-animate">
-                  <a href="#" class="services-1">
-                      <span class="icon">
-                          <i class="flaticon-flasks"></i>
-                      </span>
-                      <div class="desc">
-                          <h3 class="mb-5">Phtography</h3>
-                      </div>
-                  </a>
-              </div>
-              <div class="col-md-4 text-center d-flex ftco-animate">
-                  <a href="#" class="services-1">
-                      <span class="icon">
-                          <i class="flaticon-ideas"></i>
-                      </span>
-                      <div class="desc">
-                          <h3 class="mb-5">Web Developer</h3>
-                      </div>
-                  </a>
-              </div>
-
-              <div class="col-md-4 text-center d-flex ftco-animate">
-                  <a href="#" class="services-1">
-                      <span class="icon">
-                          <i class="flaticon-analysis"></i>
-                      </span>
-                      <div class="desc">
-                          <h3 class="mb-5">App Developing</h3>
-                      </div>
-                  </a>
-              </div>
-              <div class="col-md-4 text-center d-flex ftco-animate">
-                  <a href="#" class="services-1">
-                      <span class="icon">
-                          <i class="flaticon-flasks"></i>
-                      </span>
-                      <div class="desc">
-                          <h3 class="mb-5">Branding</h3>
-                      </div>
-                  </a>
-              </div>
-              <div class="col-md-4 text-center d-flex ftco-animate">
-                  <a href="#" class="services-1">
-                      <span class="icon">
-                          <i class="flaticon-ideas"></i>
-                      </span>
-                      <div class="desc">
-                          <h3 class="mb-5">Product Strategy</h3>
-                      </div>
-                  </a>
-              </div>
-          </div>
-  </div>
 </section>
+
 
 
   <section class="ftco-section" id="skills-section">

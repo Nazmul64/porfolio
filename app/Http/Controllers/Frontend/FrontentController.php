@@ -15,6 +15,7 @@ use App\Models\Omsblog;
 use App\Models\Ourteam;
 use App\Models\Ourtechnology;
 use App\Models\Recentworks;
+use App\Models\Resum;
 use App\Models\Service;
 use App\Models\Sitting;
 use App\Models\Success;
@@ -39,6 +40,7 @@ class FrontentController extends Controller
         $Omsblog=Omsblog::all();
         $Client=Client::all();
         $aboutme=Aboutme::all();
+        $Resum=Resum::all();
         return view('Frontent.index'
         ,compact('banner'
         ,'setting'
@@ -53,6 +55,7 @@ class FrontentController extends Controller
         ,'Omsblog'
         ,'Client',
         'aboutme',
+        'Resum',
 ));
     }
     public function contact()
