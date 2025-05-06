@@ -4,7 +4,7 @@
     <div class="home-slider  owl-carousel">
 
         @foreach ( $banner as  $item)
-
+        
 
     <div class="slider-item ">
         <div class="overlay"></div>
@@ -31,11 +31,12 @@
 
 <section class="ftco-about img ftco-section ftco-no-pb" id="about-section">
   <div class="container">
+  @foreach ( $aboutme as  $item)
       <div class="row d-flex">
           <div class="col-md-6 col-lg-5 d-flex">
               <div class="img-about img d-flex align-items-stretch">
                   <div class="overlay"></div>
-                  <div class="img d-flex align-self-stretch align-items-center" style="background-image:url(images/bg_1.png);">
+                  <div class="img d-flex align-self-stretch align-items-center" style="background-image:url({{ asset('uploads/aboutme') }}/{{ $item->photo ?? '' }});">
                   </div>
               </div>
           </div>
@@ -43,28 +44,28 @@
               <div class="row justify-content-start pb-3">
             <div class="col-md-12 heading-section ftco-animate">
                 <h1 class="big">About</h1>
-              <h2 class="mb-4">About Me</h2>
-              <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+              <h2 class="mb-4">{{ $item->about_title ?? '' }}</h2>
+              <p>{{ $item->about_description ?? '' }}</p>
               <ul class="about-info mt-4 px-md-0 px-2">
-                  <li class="d-flex"><span>Name:</span> <span>Clark Thompson</span></li>
-                  <li class="d-flex"><span>Date of birth:</span> <span>January 01, 1987</span></li>
-                  <li class="d-flex"><span>Address:</span> <span>San Francisco CA 97987 USA</span></li>
-                  <li class="d-flex"><span>Zip code:</span> <span>1000</span></li>
-                  <li class="d-flex"><span>Email:</span> <span>clarkthomp@gmail.com</span></li>
-                  <li class="d-flex"><span>Phone: </span> <span>+1-2234-5678-9-0</span></li>
+                  <li class="d-flex"><span>Name:</span> <span>{{ $item->name ?? '' }}</span></li>
+                  <li class="d-flex"><span>Date of birth:</span> <span>{{ $item->date_of_brith ?? '' }}</span></li>
+                  <li class="d-flex"><span>Address:</span> <span>{{ $item->address ?? '' }}</span></li>
+                  <li class="d-flex"><span>Zip code:</span> <span>{{ $item->zip ?? '' }}</span></li>
+                  <li class="d-flex"><span>Email:</span> <span>{{ $item->email ?? '' }}</span></li>
+                  <li class="d-flex"><span>Phone: </span> <span>{{ $item->phone ?? '' }}</span></li>
               </ul>
             </div>
           </div>
         <div class="counter-wrap ftco-animate d-flex mt-md-3">
         <div class="text">
             <p class="mb-4">
-              <span class="number" data-number="120">0</span>
+              <span class="number" data-number="{{ $item->project_text ?? '' }}">0</span>
               <span>Project complete</span>
           </p>
-          <p><a href="#" class="btn btn-primary py-3 px-3">Download CV</a></p>
         </div>
         </div>
       </div>
+       @endforeach
   </div>
   </div>
 </section>

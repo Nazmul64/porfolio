@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Backend\AboutController;
+use App\Http\Controllers\Backend\Aboutmecontroller;
 use App\Http\Controllers\Backend\AskqusitionController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
@@ -219,3 +220,5 @@ Route::prefix('Profile')->group(function () {
     Route::post('/profile/changes', [ProfileController::class, 'Profilechanes'])->name('profile.namechanes');
 
 });
+Route::resource('aboutme', Aboutmecontroller::class);
+

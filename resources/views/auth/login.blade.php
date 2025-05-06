@@ -1,4 +1,4 @@
-@include('Frontent.header')
+@include('Frontent.body.header')
 
         <!-- Start Page Title -->
         <div class="page-title-area">
@@ -68,4 +68,4 @@
             </div>
         </div>
         <!-- End Login Area -->
-   @include("Frontent.footer");
+   @include("Frontent.body.footer");

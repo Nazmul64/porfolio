@@ -33,6 +33,18 @@
                <li> <a href="{{ route('banner.index') }}"><span class="material-symbols-outlined">arrow_right</span> Slider List</a> </li>
             </ul>
           </li>
+
+          <li>
+            <a href="javascript:;" class="has-arrow">
+              <div class="parent-icon"><span class="material-symbols-outlined">apps</span>
+              </div>
+              <div class="menu-title">About Me</div>
+            </a>
+            <ul>
+               <li> <a href="{{ route('aboutme.index') }}"><span class="material-symbols-outlined">arrow_right</span>About Me</a></li>
+            </ul>
+          </li>
+
           <li>
             <a href="javascript:;" class="has-arrow">
               <div class="parent-icon"><span class="material-symbols-outlined">apps</span>

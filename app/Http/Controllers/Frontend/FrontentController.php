@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Models\About;
+use App\Models\Aboutme;
 use App\Models\Banner;
 use App\Models\Client;
 use App\Models\Contact;
@@ -37,6 +38,7 @@ class FrontentController extends Controller
         $testmonail=Testmonaill::all();
         $Omsblog=Omsblog::all();
         $Client=Client::all();
+        $aboutme=Aboutme::all();
         return view('Frontent.index'
         ,compact('banner'
         ,'setting'
@@ -49,7 +51,8 @@ class FrontentController extends Controller
         ,'success'
         ,'testmonail'
         ,'Omsblog'
-        ,'Client'
+        ,'Client',
+        'aboutme',
 ));
     }
     public function contact()
